@@ -18,33 +18,30 @@
 // Expected Output: -1
 // Justification: There is no character in the string that appears only once.
 
-
 //Solution 1
-let str = 'abab';
+let str = "abab";
 let lStr = str.toLowerCase(str);
 let length = str.length;
 let repeatIndex = -1;
-for(let i=0; i< str.length; i++){
-    let checkValue = lStr.charAt(i);
-    if(!lStr.slice(i+1,length).includes(checkValue)){
-        console.log(i);
-        break;
-    }
+for (let i = 0; i < str.length; i++) {
+  let checkValue = lStr.charAt(i);
+  if (!lStr.slice(i + 1, length).includes(checkValue)) {
+    console.log(i);
+    break;
+  }
 }
 
 //Solution 2:
-let str= 'apple';
-function firstUniqueChar(str){
+let str1 = "apple";
+function firstUniqueChar(str1) {
   const charCount = {};
-  for(const char in str){
-    charCount[char]= (charCount[char] || 0 )+1;
+  for (const char in str1) {
+    charCount[char] = (charCount[char] || 0) + 1;
   }
-  for(let i=0 ; i<str.length;i++){
-    if(charCount[str[i]]===1){
+  for (let i = 0; i < str1.length; i++) {
+    if (charCount[str1[i]] === 1) {
       return i;
     }
   }
   return -1;
 }
-
-
